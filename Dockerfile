@@ -11,4 +11,4 @@ RUN chmod 700 /root/.ssh/id_rsa
 RUN echo "Host github.com\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
 
 RUN git clone git@github.com:boxfuse/boxfuse-sample-java-war-hello.git /usr/local/boxfuse-sample-java-war-hello
-RUN  mvn package -p /usr/local/boxfuse-sample-java-war-hello
+WORKDIR /usr/local/boxfuse-sample-java-war-hello && mvn package
